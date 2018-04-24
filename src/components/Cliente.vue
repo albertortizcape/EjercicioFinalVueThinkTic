@@ -31,11 +31,25 @@ export default {
         }
     },
     computed: mapGetters({
-        clientes: 'tolosClientes'
+        clientes: 'tolosClientes',
+        //cliente: 'getActual'
     }),
+    /*
     methods: mapActions ([
         'addCliente'
     ])
+    */
+   methods:{
+       addCliente: function(cliente){
+           this.$store.commit("pushCliente",cliente)
+           this.cliente={
+                nombre:'',
+                direccion:'',
+                tlf:'',
+                email:''
+            }
+       }
+   }
 }
 </script>
 

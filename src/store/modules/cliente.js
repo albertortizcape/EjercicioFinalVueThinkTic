@@ -1,5 +1,13 @@
 const state = {
-    all: []
+    all: [],
+    /*
+    actual: {
+        nombre:'',
+        direccion:'',
+        tlf:'',
+        email:''
+    }
+    */
 }
 
 const getters = {
@@ -11,12 +19,26 @@ const mutations = {
         state.all.push({
             cliente
         })
+    },
+    /*
+    setActual (state, {cliente}){
+        state.actual=cliente
     }
+    */
 }
 
 const actions = {
     addCliente ({state, commit}, cliente){
         commit('pushCliente', {cliente})
+        /*
+        cliente= {
+            nombre:'',
+            direccion:'',
+            tlf:'',
+            email:''
+        }
+        commit('setActual',{cliente})
+        */
     }
 }
 
